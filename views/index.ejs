@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Blog Project</title>
+  </head>
+  <body>
+    <%- include("partials/navbar.ejs") %>
+    <div class="body">
+      <div class="sideBar">
+        <h3>Recent Blogs</h3>
+        <div class="recentBlogs">
+          <ul>
+            <% posts.map(post => { %>
+            <li><a href="/posts/<%= post.index %>"><%= post.title %></a></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mainHead">
+        <h1>Create Your New Blog</h1>
+
+        <div class="newCreation">
+          <a class="createBtn" href="/create">
+            <button>Create New Post</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>

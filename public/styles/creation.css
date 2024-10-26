@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.creationBody {
+  height: calc(100vh - 70px);
+  /* width: 100vw; */
+  display: flex;
+  color: white;
+  background-color: black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.creationForm {
+  border: 1px solid rgba(114, 114, 235, 0.447);
+  justify-content: center;
+  background-color: rgb(51, 43, 43);
+  padding: 1rem 4rem;
+  border-radius: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+form label {
+  font-size: 1rem;
+}
+form input,
+textarea {
+  border-radius: 0.3rem;
+  overflow: hidden;
+  border-style: none;
+  padding: 0.3rem;
+  width: 30vw;
+  background-color: black;
+  color: white;
+  border: 1px solid beige;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+.submitBtn input {
+  width: 8vw;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  border: 1px solid rgb(52, 142, 198);
+}
+.submitBtn input:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+
+.pathError{
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.pathError h1{
+  margin-top: 4rem;
+}
+.pathError a{
+  text-decoration: none;
+  color: rgb(175, 200, 169);
+  border: 1px solid white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.pathError a:hover{
+  color: rgb(52, 142, 198);
+  border: 1px solid rgb(175, 200, 169);
+}
