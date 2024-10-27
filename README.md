@@ -5,6 +5,8 @@ This is a simple blog posting website built using **Node.js**, **Express**, **EJ
 ## Features
 - Create new blog posts
 - View existing posts
+- Update blog
+- Delete blog
 - Simple, user-friendly interface
 
 ## Technologies Used
