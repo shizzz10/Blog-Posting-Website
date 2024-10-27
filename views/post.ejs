@@ -11,8 +11,45 @@
     <%- include("partials/navbar.ejs") %>
     <div class="renderPosts">
       <div class="renderPost">
-        <h1><%= post.title %></h1>
-        <p><%= post.content %></p>
+       
+
+           <!-- Edit Form -->
+           <%  if(!editing) { %> 
+            <h1 class="title"><%= post.title %></h1>
+            <p class="pera"><%= post.content %></p>
+    
+            <div class="updateBtnsDiv">
+            <a class="updateBtns" href="/posts/<%= post.index %>/edit">Edit</a>
+            <form class="deletionForm" action="/posts/<%= post.index %>/delete" method="post">
+              <button class="updateBtns" type="submit">Delete</button>
+            </form>
+          </div>
+           
+            <% } else{ %>
+               <div class="editForm">
+              <form action="/posts/<%= post.index %>/edit" method="post">
+                <!-- <label for="title">Title</label> -->
+                <input class="title" type="text" name="title" value="<%= post.title %>" required />
+                <textarea class="pera"
+                  name="content"
+                  id="content"
+                  cols="30"
+                  rows="10"
+                  placeholder="Please Write your blog"
+                  required
+                ><%= post.content %></textarea>
+                <div class="updateBtnsDiv">
+                  <button class="updateBtns" type="submit">Update Post</button>
+                  <a class="updateBtns" href="/posts/<%= post.index %>">Cancel</a>
+                </div>
+              </form>
+            </div>
+              
+          <%  } %>
+
+
+      
+
       </div>
     </div>
     <%- include("partials/footer.ejs") %>

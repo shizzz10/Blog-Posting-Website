@@ -35,8 +35,34 @@ app.get("/posts/:index", (req, res) => {
   if(!post){
     res.status(404).render("pageNotFound.ejs", {message : "Page Not Found"})
   }
-  res.render("post.ejs", { post });
+  res.render("post.ejs", { post, editing: false });
 });
+
+app.get("/posts/:index/edit", (req, res)=>{
+  const post = posts.find((blog) => blog.index === parseInt(req.params.index))
+  if(!post){
+    return res.status(404).render("pageNotFound.ejs", { message: "Page Not Found" });
+  }
+  res.render("post.ejs", {post, editing : true})
+})
+
+app.post("/posts/:index/edit", (req, res) => {
+  const postIndex = posts.findIndex((blog) => blog.index === parseInt(req.params.index));
+  if(postIndex !== -1){
+    posts[postIndex].title = req.body.title;
+    posts[postIndex].content = req.body.content;
+  };
+  res.redirect(`/posts/${req.params.index}`)
+})
+
+app.post("/posts/:index/delete", (req, res) => {
+  const postIndex = posts.findIndex((blog) => blog.index === parseInt(req.params.index));
+
+  if(postIndex !== -1){
+    posts.splice(postIndex, 1)
+  }
+  res.redirect("/")
+})
 
 app.listen(port, () => {
   console.log(`app is loading on the server ${port}`);

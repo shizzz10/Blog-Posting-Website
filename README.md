@@ -12,6 +12,3 @@ This is a simple blog posting website built using **Node.js**, **Express**, **EJ
 - Express
 - EJS (Embedded JavaScript)
 - CSS for styling
-
-## Getting Started
-To run this application locally, follow these steps:g
