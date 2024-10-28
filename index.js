@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 const port = 3000;
 
 const app = express();
+app.set('view engine', 'ejs');
 const posts = [];
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
